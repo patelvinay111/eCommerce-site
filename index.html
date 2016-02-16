@@ -1,0 +1,66 @@
+<!doctype html>
+<html data-placeholder-focus="false">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Responsive</title>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/bootstrap-responsive.css">
+		<link rel="stylesheet" href="main.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="Placeholders.js"></script>
+		<script type="text/javascript">
+			$(function() { 
+			$('[name="username"]').focus(); 
+			});
+		</script>
+	</head>
+
+	<body class="placeholder-example">
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-th-list"></span>
+					</a>
+					<a href="#" class="brand">SJSU eCommerce</a>
+					<div class="nav-collapse collapse">
+						<ul class="navbar-form pull-right">
+							<input style="width:186px" type="text" placeholder="Email" name="username">
+							<input style="width:176px" type="password" placeholder="Password" name="password">
+							<input class="btn btn-primary" type="submit" value="Log in">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+				<br>
+			<div class="row-fluid">
+				<div class="span7">
+				</div>
+				<div class="span5">
+					<br>
+					<div>
+						<br>
+						<br>
+						<br>
+						<br>
+						<h1>Sign Up</h1>
+						<h4>It's free!</h4>
+					</div>
+					<form>
+						<input type="text" class="user_name" style="height: 30px" placeholder="Firstname">
+						<input type="text" class="user_name" style="height: 30px" placeholder="Lastname"><br>
+						<input type="text" class="Email_pass" style="height: 30px" placeholder="Your Email"><br>
+						<input type="password" class="Email_pass" style="height: 30px" placeholder="Re-enter Email"><br>
+						<input type="password" class="Email_pass" style="height: 30px" placeholder="New Password"><br>
+						<input type="submit" class="btn btn-primary" style="width:90px; height: 40px; font-size: 16px" value="Sign up">
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
