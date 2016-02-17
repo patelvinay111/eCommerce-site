@@ -1,3 +1,11 @@
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li><%= link_to 'New User', new_user_path %></li>
+    <li><%= link_to 'Edit', edit_user_path(@user) %></li>
+    <li><%= link_to 'Items', items_path %></li>
+  </ul>
+</div>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -19,7 +27,3 @@
   <strong>Password:</strong>
   <%= @user.password %>
 </p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %> |
-<%= link_to 'Items', items_path %>
