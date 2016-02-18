@@ -1,19 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+<ul class="nav nav-tabs">
+	<li><%= link_to 'Edit', edit_item_path(@item) %></li>
+	<li><%= link_to 'Back', items_path %></li>
+</ul>
+	<p class="alert alert-success" id="notice"><%= notice %></p>
+	<p>
+	  <strong>Name:</strong>
+	  <%= @item.name %>
+	</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
+	<p>
+	  <strong>Description:</strong>
+	  <%= @item.description %>
+	</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @item.price %>
-</p>
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+	<p>
+	  <strong>Price:</strong>
+	  <%= @item.price %>
+	</p>
+</div>

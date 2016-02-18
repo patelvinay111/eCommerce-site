@@ -10,20 +10,19 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :price %><br>
+    <%= f.label :price %>
     <%= f.text_field :price %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Post Item', :class => 'btn btn-primary'%>
   </div>
 <% end %>
