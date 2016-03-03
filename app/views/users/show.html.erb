@@ -5,26 +5,15 @@
     <li><%= link_to 'Items', items_path %></li>
   </ul>
 </div>
-<div class="container">
+<div class="jumbotron">
   <p class="alert alert-success" id="notice"><%= notice %></p>
 
-  <p>
-    <strong>First name:</strong>
-    <%= @user.first_name %>
-  </p>
-
-  <p>
-    <strong>Last name:</strong>
-    <%= @user.last_name %>
-  </p>
+  
 
   <p>
     <strong>Email:</strong>
     <%= @user.email %>
   </p>
 
-  <p>
-    <strong>Password:</strong>
-    <%= @user.password %>
-  </p>
+  
 </div>
