@@ -1,6 +1,13 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
+  
+  
+  #rescue ActiveRecord::RecordNotFound
+  #redirect_to 'users/new'
+    # special handling here
+ 
+
   # GET /items
   # GET /items.json
   def index
@@ -10,6 +17,16 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+  
+    
+    @item = Item.find(params[:id])
+    
+    if @item.nil?
+    flash[:notice] ="no item !"
+    else
+     flash[:notice] ="show item !"
+    end
+    
   end
 
   # GET /items/new
@@ -19,6 +36,13 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
+    @item = Item.find(params[:id])
+    
+     if @item.nil?
+    flash[:notice] ="no item !"
+    else
+     flash[:notice] ="show item !"
+    end
   end
 
   # POST /items
@@ -64,7 +88,14 @@ class ItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
+  
       @item = Item.find(params[:id])
+   
+     if @item.nil?
+    flash[:notice] ="no item !"
+    else
+     flash[:notice] ="set item !"
+    end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

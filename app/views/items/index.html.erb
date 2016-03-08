@@ -3,8 +3,7 @@
   <li><%= link_to 'New Item', new_item_path %></li>
 </ul>
 
-  <p id="notice"><%= notice %></p>
-
+<p id="notice"><%= notice %></p>
   <h1>Listing Items</h1>
 
   <table class="table table-hover">
@@ -28,6 +27,7 @@
           <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
+
     </tbody>
   </table>
 </div>
