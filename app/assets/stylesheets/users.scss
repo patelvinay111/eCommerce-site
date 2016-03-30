@@ -1,11 +1,21 @@
 .navbar{
 background-color:#3299CC;
 }
+#linkcolor{
+color:#FFFFFF;
+}
+#linkcolor:hover{
+color:#FF9900;
+}
+
 #navbar{
 height:70px;
 }
 .btn-success{
 background-color:#FF9900;
+}
+.btn-success:hover {
+background-color:#3299CC;
 }
 .new-user a{
 color:#ffffff;
@@ -38,3 +48,21 @@ background-color:#3299CC;
 .btn-sign-in{
 background-color:#FF9900;
 }
+.text-of-email{
+float:left;
+padding-right:30px;
+}
+.text-of-email a{
+color:#ffffff;
+text-decoration:none
+
+}
+#upload-file-container {
+   background: url(assets/blank.png) no-repeat;
+}
+
+#upload-file-container input {
+   filter: alpha(opacity=0);
+   opacity: 0;
+}
+

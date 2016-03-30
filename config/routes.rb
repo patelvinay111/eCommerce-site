@@ -1,16 +1,31 @@
 Rails.application.routes.draw do
   
-   devise_for :users, :controllers => { :registrations => "users" }
+   devise_for :users, :controllers => { :registrations => "users", :sessions => "sessions" }
 
   devise_scope :user do
+    root 'users#new'
+    #get 'users/dashboard', to: 'users#new'
+   # get 'users/dashboard', to: 'users#dashboard'
+    #get 'login', to: 'users#dashboard'
 
-          root 'users#new'
+     get '/login', to: 'users#dashboard', :as => :users_dashboard
+     #get '/login', to: 'users#dashboard', :as => :new_user_session
+    # get '/signup', to: 'users#new', :as => :new_user_registration
+
+
+   # get 'devise/sessions/new', to: 'users/sessions#create', as: 'session'
+     #get '/login', to: 'sessions#new', :as => :new_user_session
+     #get '/login', to: 'devise/sessions#new'
 
    #get "signup", to: "users#new"
    #get "login", to: "devise/sessions#new"
    #get "logout", to: "devise/sessions#destroy"
 end
+
  resources :items
+  resources :users
+
+get '/product', to: 'items#itempage', :as => :itempage
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

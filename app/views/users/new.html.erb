@@ -1,5 +1,4 @@
- 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+ <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -11,20 +10,16 @@
             <a class="navbar-brand" href="#">ShopSJSU</a>
 
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+                 <div id="navbar" class="navbar-collapse collapse">
 
-            <div class="navbar-form navbar-right">
+                     <div class="navbar-form navbar-right">
             
-            
-                
-                
-   
-                    <%= render 'devise/registrations/new' %> 
+ 
+                        <%= render 'devise/sessions/new' %> 
+
                     
-                    
-                    
-                    
-                    
+                        <%= render 'devise/registrations/new' %> 
+                                     
                     </div>
 
                 </div>
@@ -32,39 +27,20 @@
             </div>
         </nav>
 
-
  <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Wellcome Spartan!</h1>
+        <h1>Welcome Spartan!</h1>
+
         <p>Buying and selling is never easire with ShopSJSU.</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
       </div>
     </div>
-
+    
+                 <%= render template: 'items/index' %>   
+ 
     <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Featured Best Webapp</h2>
-          <p>Best website for buying and selling between San Jose State University
-          </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Easy to use</h2>
-          <p>List your item with 3 simple clicks</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Buy cheap, sell fair</h2>
-          <p>Never sell your text book very cheap</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
-
-      <hr>
-
+   
       <footer>
         <p>&copy; 2015 Company, Inc.</p>
       </footer>

@@ -8,6 +8,8 @@ class User::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
    def create
+       #session["#{resource_name}_return_to"] = current_user_path
+
      super
    end
 
@@ -22,4 +24,7 @@ class User::SessionsController < Devise::SessionsController
    def configure_sign_in_params
      devise_parameter_sanitizer.for(:sign_in) << :attribute
    end
+   
+  
+ 
 end

@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
   
   
   #rescue ActiveRecord::RecordNotFound
-  #redirect_to 'users/new'
     # special handling here
  
 
@@ -16,19 +15,14 @@ class ItemsController < ApplicationController
 
   # GET /items/1
   # GET /items/1.json
-  def show
-  
-    
-    @item = Item.find(params[:id])
-    
-    if @item.nil?
-    flash[:notice] ="no item !"
-    else
-     flash[:notice] ="show item !"
-    end
-    
+  def show  
+    @item = Item.find(params[:id])  
   end
-
+ # GET /items/1
+  def itempage
+   @item = Item.find(params[:id])
+  end
+  
   # GET /items/new
   def new
     @item = Item.new
@@ -36,13 +30,7 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
-    @item = Item.find(params[:id])
     
-     if @item.nil?
-    flash[:notice] ="no item !"
-    else
-     flash[:notice] ="show item !"
-    end
   end
 
   # POST /items
@@ -91,15 +79,10 @@ class ItemsController < ApplicationController
   
       @item = Item.find(params[:id])
    
-     if @item.nil?
-    flash[:notice] ="no item !"
-    else
-     flash[:notice] ="set item !"
-    end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :description, :price)
+      params.require(:item).permit(:name, :description, :price, :image)
     end
 end

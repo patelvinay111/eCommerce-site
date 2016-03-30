@@ -34,7 +34,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass', '~> 3.2.0.2'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.9', :require => 'bcrypt'
+ gem 'bcrypt', '~> 3.1.11', :require => 'bcrypt'
+#gem 'bcrypt-ruby', '~> 3.0.0', platforms: :ruby
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -55,3 +56,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
+gem "paperclip"
+
+gem 'holder_rails'
+

@@ -1,19 +1,6 @@
 class User::RegistrationsController < Devise::RegistrationsController
-   #before_filter :configure_sign_up_params, only: [:create]
-  
-   #before_filter :configure_permitted_parameters
-
-  #protected
-
-  #def configure_permitted_parameters
-    #devise_parameter_sanitizer.for(:sign_up).push(:firstname, :lastname, :confirmpassword)
-  #end
-  #def configure_devise_params
-    #devise_parameter_sanitizer.for(:sign_up) do |u|
-        #u.permit(:firstname, :lastname, :email, :password, :confirmpassword)
-    #end
-  #end
-  
+ 
+  flash[:error] = resource.errors.full_messages.join(" ")
    private
 
   def sign_up_params
@@ -25,12 +12,10 @@ class User::RegistrationsController < Devise::RegistrationsController
   def account_update_params
     params.require(:user).permit(:firstname, :lastname, :email, :password, :confirmpassword)
   end
-# before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
    def new
    super
-    
    end
 
   # POST /resource
@@ -78,17 +63,14 @@ class User::RegistrationsController < Devise::RegistrationsController
   # The path used after sign up.
    def after_sign_up_path_for(resource)
    super(resource)
-     #'views/items/new'
-     #'items#new'
-
+    
    end
 
   # The path used after sign up for inactive accounts.
    def after_inactive_sign_up_path_for(resource)
      super(resource)
-          #'views/items/new'
-     #'items#new'
-
+          
    end
+    
    
 end

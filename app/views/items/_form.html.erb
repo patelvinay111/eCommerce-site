@@ -1,28 +1,66 @@
-<%= form_for(@item) do |f| %>
-  <% if @item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+<%= form_for @item , html: { multipart: true } do |f| %>
+    <%#= devise_error_messages! %>
 
-      <ul>
-      <% @item.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Post Item', :class => 'btn btn-primary'%>
-  </div>
-<% end %>
+        <div id="sign-up" class="new-user" style="width:45%">
+
+                    <div id="legend">
+                        <legend class=""><h1>New Item</h1></legend>
+                    </div>
+
+                    <div class="control-group">
+
+
+                        <%= f.label :name %>
+
+                            <div class="controls">
+
+                                <%= f.text_field :name , :class=> "form-control"%>
+                            </div>
+                    </div>
+                    <div class="control-group">
+
+
+                        <%= f.label :price %>
+
+                            <div class="controls">
+
+                                <%= f.text_field :price , :class=> "form-control"%>
+                            </div>
+                    </div>
+
+                    <div class="control-group">
+
+
+                        <%= f.label :description %>
+
+                            <div class="controls">
+
+                                <%= f.text_area :description ,   :class=> "form-control", :cols => "10", :rows => "10"%>
+                                <p class="help-block"></p>
+
+                            </div>
+                    </div>
+
+                   
+                   
+                   <div class="control-group">
+
+
+                        <div class="controls">
+                            <%= f.file_field :image  %>
+
+                        </div>
+                    </div>
+
+
+                    <div class="control-group">
+
+
+                        <div class="controls">
+                            <%= f.submit "Post" , :class=> 'btn btn-primary' , :style=> 'float:right; width:100px;' %>
+
+                        </div>
+                    </div>
+
+        </div>
+ <% end %>
