@@ -8,16 +8,9 @@ class User < ActiveRecord::Base
   
   attr_accessor :login
 
- # has_one :paperclip, dependent: :destroy
+  has_one :profilepic, dependent: :destroy
 
-   has_attached_file :paperclip, styles: { small: "64x64", med: "100x100", large: "200x200" },
-
-     :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
-      :url => "/system/:attachment/:id/:style/:filename"
-
-validates_attachment_content_type :paperclip, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
-
-
+  
 
  
     #validates_confirmation_of :password

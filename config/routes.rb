@@ -20,12 +20,21 @@ Rails.application.routes.draw do
    #get "signup", to: "users#new"
    #get "login", to: "devise/sessions#new"
    #get "logout", to: "devise/sessions#destroy"
+     #get '/editpro', to: 'users#new'
+     get '/editpro', to: 'users#editprofile'
+
 end
 
  resources :items
   resources :users
+  resources :profilepics
 
-get '/product', to: 'items#itempage', :as => :itempage
+get '/product/', to: 'items#itempage', :as => :itempage
+get '/profile/', to: 'profilepics#show'
+
+#get '/edit/', to: 'users#edit'
+
+#get '/profile', to: 'users#profilepic', :as => :profilepic
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

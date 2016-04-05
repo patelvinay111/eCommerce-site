@@ -1,3 +1,4 @@
+ 
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -37,10 +38,12 @@
           <div class="row">
             <div class="col-xs-12 col-sm-4 text-center">
 
-   <img data-src="holder.js/200x200" src="assets/blank.png" alt="" class="center-block img-circle img-thumbnail img-responsive"  >
 
-                   <%= render 'profilepics/form' %>
                    
+        <%= image_tag @profilepic.avator.url(:large), :class=>'center-block img-circle img-responsive', :style=>"width:200px; height:200px;" %>
+
+    
+
 
               <ul class="list-inline ratings text-center" title="Ratings">
                 <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
@@ -71,14 +74,7 @@
             <!--/col-->
             <div class="col-xs-12 col-sm-3">
               <h2 style="text-align:center"><strong>10</strong></h2>
-                                         
-           
-  <button type="button" class="btn btn-primary btn-block"><class="span class="fa fa-gear""></span> <%= link_to "Edit Profile" , 
-
- edit_user_registration_path(current_user.id), :style => "color: #FFFFFF;"  %>  </button>  
-                          
-              
-              
+              <button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span> Item bought </button>  
             </div>
             <div class="col-xs-12 col-sm-3">
                <h2 style="text-align:center"><strong></strong> <br></h2>

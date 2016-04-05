@@ -1,39 +1,81 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"/>
+                <span class="icon-bar"/>
+                <span class="icon-bar"/>
+            </button>
+            <a class="navbar-brand" href="#">ShopSJSU</a>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+            <div class="navbar-form navbar-right">
+            
+        
+                   <p>welcome</p>
+                   
+                    </div>
+
+                </div>
+
+            </div>
+        </nav>
+  
+
+       <div id="legend">
+          <legend class=""><h1>Edit profilehhhh</h1></legend>
+        </div>
+<%= form_for(resource,as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%#= devise_error_messages! as: resource_name%>
+
+  <div id="sign-up" class="new-user" style="width:45%">
+
+        <div class="control-group">
+  
+     <%= f.label :firstname %><br />
+     <div class="controls">
+     <%= f.text_field :firstname , :class=> "form-control"%>
+  </div>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
+  
+        <div class="control-group">
+  
+         <%= f.label :lastname %>
+         <div class="controls">   
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+        <%= f.text_field :lastname , :class=> "form-control"%>
+        </div>
+        </div>
+        
+          <div class="control-group">
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+        <%= f.label :email %>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+        <div class="controls">
+
+     <%= f.email_field :email ,  :oninvalid=>"setCustomValidity('Invalid email address')" , :class=> "form-control"%>
+                                  
+        </div>
+        
+        
 
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
 <% end %>
 
+</div>
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+</div>

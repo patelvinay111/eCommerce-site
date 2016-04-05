@@ -8,29 +8,50 @@ prepend_before_filter :require_no_authentication, only: [:cancel ]
   
   def new
       @items = Item.all
+      @profilepic = Profilepic.new
       super
   end
   
-  def dashboard
-      #@user = User.find(params[:id])
-   @user = User.new 
+  def editprofile
+       @user = User.new   
+  end
+
+  def dashboard    
+      @user = User.new     
+      @profilepic= Profilepic.new
   end 
+  
+  def edit
+      @user = current_user
+      #@user = User.find(params[:id])
+      #redirect_to(user_dashboard_path)
+      super
+   end
+   
+  def profile
+  @profilepic = Profilepic.find(params[:id])
+  end
  
 protected
 
   def after_sign_up_path_for(resource)
-  users_dashboard_path
+      users_dashboard_path
   end
-
-   
 
   def after_inactive_sign_up_path_for(resource)
  
-  users_dashboard_path
+      users_dashboard_path
   end
 
   def user_params
       params.require(:user).permit(:firstname, :lastname, :email, :password, :password_confirmation, :paperclip)
-    end
-  
+  end
+  def update_resource(resource, params)
+      resource.update_without_password(params)
+  end
+    
+  def set_user
+   # @user = User.find(params[:id])
+  end
+ 
 end

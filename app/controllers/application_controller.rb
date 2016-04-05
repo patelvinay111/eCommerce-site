@@ -19,13 +19,19 @@ class ApplicationController < ActionController::Base
     u.permit(:login, :email, :password) 
 
     end
-
+    devise_parameter_sanitizer.for(:account_update) do |userp| 
+    userp.permit(:firstname, :lastname, :email) 
+    end
   end
   
    def after_sign_in_path_for(resource)
    users_dashboard_path
    end
-    
+      def image_tag(source, options={})
+    source = "assets/blank.png" if source.blank?
+    super(source, options)
+  end
+
  
 end
 
