@@ -1,6 +1,8 @@
 class Profilepic < ActiveRecord::Base
 
 belongs_to :user
+#validates :user_id, :presence => true
+
 has_attached_file :avator, styles: { small: "64x64", med: "100x100", large: "200x200" },
 
      :path => ":rails_root/public/system/:attachment/:id/:style/:filename",

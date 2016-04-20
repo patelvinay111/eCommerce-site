@@ -17,3 +17,7 @@
 //= require_tree .
 //= require holder
 
+
+//= require chosen-jquery
+
+

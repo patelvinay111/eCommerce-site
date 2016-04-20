@@ -4,8 +4,20 @@ background-color:#3299CC;
 #linkcolor{
 color:#FFFFFF;
 }
+
 #linkcolor:hover{
 color:#FF9900;
+}
+.link-hover-color{
+color:#FFFFFF; 
+text-decoration:none;
+background-color:transparent;
+}
+.link-hover-color:hover{
+background-color:transparent;
+color:#FF9900;
+text-decoration:none;
+
 }
 
 #navbar{

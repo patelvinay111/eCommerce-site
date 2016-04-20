@@ -4,13 +4,29 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
     validates_format_of :email, :with =>  Devise::email_regexp
- 
+    
+    acts_as_messageable
   
-  attr_accessor :login
+  attr_accessor :login, :profilepic
 
-  has_one :profilepic, dependent: :destroy
+  has_one :profilepic
 
-  
+  #, dependent: :destroy
+
+  def mailboxer_name
+  #"User #{id}"
+  self.firstname
+    end
+    #Returning the email address of the model if an email should be sent for this object (Message or Notification).
+    #If no mail has to be sent, return nil.
+  def mailboxer_email(object)
+  #Check if an email should be sent for that object
+  #if true
+  self.email
+  #return "define_email@on_your.model"
+  #if false
+  #return nil
+  end
 
  
     #validates_confirmation_of :password

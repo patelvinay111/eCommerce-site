@@ -59,4 +59,8 @@ gem 'devise'
 gem "paperclip"
 
 gem 'holder_rails'
+gem 'mailboxer'
+gem 'activerecord-reset-pk-sequence'
+gem 'chosen-rails'
+
 

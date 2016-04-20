@@ -1,0 +1,18 @@
+
+<div class="container"  >
+ <% @conversations.each do |conversation| %>
+
+    <div id="products" class="row list-group" style="display: inline-block; width:50%; padding:20px;">
+        <div class="item  col-xs-4 col-lg-4"style=width:100%;">
+            <div class="thumbnail">
+            
+                           
+                        <%= link_to conversation.subject, conversation_path(conversation) %>
+                        
+                          <%= link_to "New Conversation", new_conversation_path %>
+                        </div>
+                    </div>
+                </div>
+          
+    <% end %>
+</div>
