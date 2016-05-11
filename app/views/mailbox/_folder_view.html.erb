@@ -2,13 +2,10 @@
   <div class="spacer"></div>
   <div class="col-md-12", style="margin-bottom:10px;">
     <!-- we'll configure this to compose new conversations later -->
-    <%= link_to "Compose", new_conversation_path, class: "btn btn-success" %>
+    <%= link_to "Compose", new_conversation_path, class: "btn btn-success" ,:style => "color: #FFFFFF;"%>
     <div class="spacer"></div>
   </div>
   
-
-  
-
   <div class="col-md-4">
     <div class="panel panel-default">
       <div class="panel-body">
@@ -17,7 +14,6 @@
     </div>
   </div>
 
-    
   <div class="col-md-8">
     <div class="panel panel-default">
       <div class="panel-body">
@@ -25,7 +21,6 @@
             <%= render 'conversations/form' %>
         <% else %>
          <%= render partial: 'conversations/conversation', collection: messages %>
-        
         <% end %>
       </div>
     </div>

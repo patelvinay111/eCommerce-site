@@ -11,18 +11,18 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+	@user = current_user
   end
 
   # GET /items/1
   # GET /items/1.json
-  def show  
-    @item = Item.find(params[:id])  
+
+  def show
+   @item = Item.find(params[:id])
   end
- # GET /items/1
   def itempage
    @item = Item.find(params[:id])
   end
-  
   # GET /items/new
   def new
     @item = Item.new
@@ -32,12 +32,11 @@ class ItemsController < ApplicationController
   def edit
     
   end
-
+  
   # POST /items
   # POST /items.json
   def create
     @item = Item.new(item_params)
-
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
@@ -76,13 +75,12 @@ class ItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
-  
       @item = Item.find(params[:id])
    
     end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :description, :price, :image)
+	
+      params.require(:item).permit(:name, :description, :price, :image, :user_id)
     end
 end

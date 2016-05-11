@@ -2,9 +2,8 @@
   <div class="attach-set">
   <%= form_for @paperclip,  html: { multipart: true } do |f| %>
     <%= f.file_field :paperclip %>
-                <%= f.submit "Update", class: "btn btn-primary" %>
-
-    <% end %>
+    <%= f.submit "Update", class: "btn btn-primary" %>
+  <% end %>
     <div class="input-append">
       <a id="upload-btn" class="btn"><i class="icon-upload-alt"></i> Browse</a>
     </div>

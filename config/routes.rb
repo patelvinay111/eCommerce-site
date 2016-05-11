@@ -1,37 +1,19 @@
 Rails.application.routes.draw do
   
-   devise_for :users, :controllers => { :registrations => "users", :sessions => "sessions" }
-
+  devise_for :users, :controllers => { :registrations => "users", :sessions => "sessions" }
   devise_scope :user do
     root 'users#new'
-    #get 'users/dashboard', to: 'users#new'
-   # get 'users/dashboard', to: 'users#dashboard'
-    #get 'login', to: 'users#dashboard'
-
-     get '/login', to: 'users#dashboard', :as => :users_dashboard
-     #get '/login', to: 'users#dashboard', :as => :new_user_session
-    # get '/signup', to: 'users#new', :as => :new_user_registration
-
-
-   # get 'devise/sessions/new', to: 'users/sessions#create', as: 'session'
-     #get '/login', to: 'sessions#new', :as => :new_user_session
-     #get '/login', to: 'devise/sessions#new'
-
-   #get "signup", to: "users#new"
-   #get "login", to: "devise/sessions#new"
-   #get "logout", to: "devise/sessions#destroy"
-     #get '/editpro', to: 'users#new'
-     get '/editpro', to: 'users#editprofile'
-
+    get '/login', to: 'users#dashboard', :as => :users_dashboard
+    get '/editpro', to: 'users#editprofile'
 end
 
- resources :items
+  resources :items
   resources :users
   resources :profilepics
 
-get '/product/', to: 'items#itempage', :as => :itempage
-get '/profile/', to: 'profilepics#show'
-
+	get '/product/', to: 'items#itempage', :as => :itempage
+	get '/profile/', to: 'profilepics#show'
+	get '/seller/', to: 'items#sellerprofile'
     resources :conversations do
         member do
           post :reply
@@ -40,12 +22,10 @@ get '/profile/', to: 'profilepics#show'
         end
        # resources :messages
     end
-     get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
-  get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
-  get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash
-#get '/edit/', to: 'users#edit'
+    get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
+	get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
+	get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash
 
-#get '/profile', to: 'users#profilepic', :as => :profilepic
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

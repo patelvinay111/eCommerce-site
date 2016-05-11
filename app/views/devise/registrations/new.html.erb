@@ -1,87 +1,53 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
-        <div id="sign-up" class="new-user">
+       <div class="new-user" id="sign-up">
+        <ul>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Create Account</a>
-
-                <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu" style="width:100%; background-color:#FF9900; padding:20px;">
-
-
-
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Create Account</a>
+                <div class="dropdown-menu dropdown-lr animated flipInX" role="menu" style="background-color: #FF9900; margin-left: 2em; padding: 20px; width: 100%">
                     <div id="legend">
                         <legend class="">Register</legend>
                     </div>
-
                     <div class="control-group">
-
-
                         <%= f.label :firstname %>
-
-                            <div class="controls">
-
-                                <%= f.text_field :firstname , :class=> "form-control"%>
-                            </div>
-                    </div>
-                    <div class="control-group">
-
-
-                        <%= f.label :lastname %>
-
-                            <div class="controls">
-
-                                <%= f.text_field :lastname , :class=> "form-control"%>
-                            </div>
-                    </div>
-
-                    <div class="control-group">
-
-
-                        <%= f.label :email %>
-
-                            <div class="controls">
-
-                                <%= f.email_field :email , :oninvalid=>"setCustomValidity('Invalid email address')",  :class=> "form-control"%>
-                                
-                            </div>
-                    </div>
-
-                    <div class="control-group">
-
-                        <%= f.label :password %>
-
-                            <div class="controls">
-
-                                <%= f.password_field :password , :class=> "form-control"%>
-                            </div>
-                    </div>
-
-                    <div class="control-group">
-
-                        <%= f.label :confirmpassword %>
-
-                            <div class="controls">
-
-                                <%= f.password_field :password_confirmation , :class=> "form-control"%>
-                                    <p class="help-block">Please confirm password</p>
-                            </div>
-                    </div>
-
-                    <div class="control-group">
-
-
                         <div class="controls">
-                            <%= f.submit "Sign up" , :class=> 'btn btn-primary' %>
-
+                            <%= f.text_field :firstname , :class=> "form-control"%>
                         </div>
                     </div>
-
-
-                </ul>
-
+                    <div class="control-group">
+                        <%= f.label :lastname %>
+                        <div class="controls">
+                            <%= f.text_field :lastname , :class=> "form-control"%>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <%= f.label :email %>
+                        <div class="controls">
+                            <%= f.email_field :email , :oninvalid=>"setCustomValidity('Invalid email address')",  :class=> "form-control"%>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <%= f.label :password %>
+                        <div class="controls">
+                            <%= f.password_field :password , :class=> "form-control"%>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <%= f.label :confirmpassword %>
+                        <div class="controls">
+                            <%= f.password_field :password_confirmation , :class=> "form-control"%>
+                            <p class="help-block">Please confirm password</p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <%= f.submit "Sign up" , :class=> 'btn btn-primary' %>
+                        </div>
+                    </div>
+                </div>
             </li>
-
-
-        </div>
+        </ul>
+    </div>
 
     <% end %>

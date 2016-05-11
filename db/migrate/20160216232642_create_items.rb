@@ -4,6 +4,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.float :price
+	  
 
       t.timestamps null: false
     end

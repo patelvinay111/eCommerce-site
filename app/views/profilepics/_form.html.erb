@@ -1,8 +1,9 @@
  <div class="control-group">
   <div class="attach-set">
      <%= form_for @profilepic , html: { multipart: true } do |f| %>
-        <%= f.file_field :avator   ,:style=>'margin-top:10px;'%>
-            <%= f.submit "Upload" , :class=> 'btn btn-primary', :style=> "width:100px; margin-top:5px;" %>
+	 <%= f.hidden_field :user_id, :value=> current_user.id %>
+        <%= f.file_field :avator   ,:style=>'margin-top:10px'%>
+        <%= f.submit "Upload" , :class=> 'btn btn-primary', :style=> "width:100px; margin-top:5px;" %>	
      <% end %>
       
     <div class="input-append">  

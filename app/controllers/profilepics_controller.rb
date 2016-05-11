@@ -3,46 +3,32 @@ class ProfilepicsController < ApplicationController
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
-     def new
-  #super
+  def new
    @profilepic = Profilepic.new
-       
-#@profilepic = @user.profilepic.new
   end
+  
   def edit
       
   end
 
-
   def index
-     @profilepic = Profilepic.find(params[:id])
- 
+  @profilepics = Profilepic.all
   end
   
-  def create 
-      # @profilepic = @user.profilepic.create
-    @profilepic = Profilepic.create( profilepic_params )
-      #  @profilepic= @user.profilepic.new
-
-    @profilepic.user = current_user
-	
-	#Profilepic.create(user_id: current_user.id)
-
-
-  redirect_to @profilepic   
+  def create   
+	@profilepic = Profilepic.create( profilepic_params ) 
+    redirect_to @profilepic  	 
   end
   
- def show
+  def show
     @profilepic = Profilepic.find(params[:id])
   end
 
-def profilepic
-    @profilepic = Profilepic.find(params[:id])
+  def profilepic
   end
-
 
   def profilepic_params
-      params.require(:profilepic).permit(:avator)
+      params.require(:profilepic).permit(:avator, :user_id)
     end
 end
 

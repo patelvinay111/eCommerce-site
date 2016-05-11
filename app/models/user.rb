@@ -10,11 +10,10 @@ class User < ActiveRecord::Base
   attr_accessor :login, :profilepic
 
   has_one :profilepic
+  has_many :items
 
-  #, dependent: :destroy
 
   def mailboxer_name
-  #"User #{id}"
   self.firstname
     end
     #Returning the email address of the model if an email should be sent for this object (Message or Notification).
@@ -27,10 +26,6 @@ class User < ActiveRecord::Base
   #if false
   #return nil
   end
-
- 
-    #validates_confirmation_of :password
-  #validates_confirmation_of    :password, :on=>:create
 
 def self.find_for_database_authentication(warden_conditions)
       conditions = warden_conditions.dup

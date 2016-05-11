@@ -7,8 +7,6 @@
             <div class="thumbnail">
             
             <%= image_tag item.image.url , :class=>"group list-group-image", :alt=>"" , :style=>"width:200px; height:200px;padding:8px;" %>
-                      
-
                 <div class="caption">
                     <h4 class="group inner list-group-item-heading">
                         <%= item.name %></h4>
@@ -20,9 +18,12 @@
                                 <%= item.price %></p>
                         </div>
                         <div class="col-xs-12 col-md-6">
+						<% if current_user.present? %>
                            
                         <%= link_to 'Buy Now', itempage_path(item, :id=>item.id), :class=>'btn btn-success', :style=>'color:#FFFFFF; text-decoration:none;' %>
-
+						<% else %>
+						
+						<%end %>
                         </div>
                     </div>
                 </div>

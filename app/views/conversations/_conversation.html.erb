@@ -13,6 +13,6 @@
       <small><b>Date: </b><%=  conversation.messages.last.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></small>
     </h4>
     <%= truncate conversation.messages.last.body, length: 145 %>
-    <%= link_to "View", conversation_path(conversation)  %>
+    <%= link_to "View", conversation_path(conversation) ,:style=>'color:red; background-color:white;' %>
   </div>
 </div>

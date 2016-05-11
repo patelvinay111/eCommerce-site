@@ -1,19 +1,17 @@
 class  UsersController < Devise::RegistrationsController
-#prepend_before_filter :require_no_authentication, :only => [ :new, :create, :cancel ]
-prepend_before_filter :require_no_authentication, only: [:cancel ]
+  #prepend_before_filter :require_no_authentication, :only => [ :new, :create, :cancel ]
+  prepend_before_filter :require_no_authentication, only: [:cancel ]
  
-
-#prepend_before_filter :authenticate_scope!, :only => [:edit, :update, :destroy]
+  #prepend_before_filter :authenticate_scope!, :only => [:edit, :update, :destroy]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   
   def new
       @items = Item.all
-      @profilepic = Profilepic.new
       super
   end
  #for signup failure
   def create
-    build_resource(sign_up_params)
+      build_resource(sign_up_params)
 
    if resource.save
         yield resource if block_given?
@@ -32,29 +30,25 @@ prepend_before_filter :require_no_authentication, only: [:cancel ]
         redirect_to root_path 
     end
 
-  
   end
   
   def editprofile
-       @user = User.new   
+      @user = User.new   
   end
 
   def dashboard    
-      @user = User.new     
-      @profilepic= Profilepic.new
-      #   @profilepic= @user.profilepic.new
+      @user = User.new         
+	  @profilepic= Profilepic.new
 
   end 
   
   def edit
       @user = current_user
-      #@user = User.find(params[:id])
-      #redirect_to(user_dashboard_path)
       super
    end
    
   def profile
-  @profilepic = Profilepic.find(params[:id])
+  #commented @profilepic = Profilepic.find(params[:id])
   end
  
 protected
@@ -76,7 +70,7 @@ protected
   end
     
   def set_user
-   # @user = User.find(params[:id])
+ 
   end
  
 end

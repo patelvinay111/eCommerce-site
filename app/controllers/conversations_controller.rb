@@ -2,29 +2,19 @@ class ConversationsController < ApplicationController
   #before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
-  
-  
   #rescue ActiveRecord::RecordNotFound
-    # special handling here
- 
-
+  # special handling here
   # GET /items
   # GET /items.json
-  #def index
-
-  #  @conversations = current_user.mailbox.conversations
-
- # end
- def new
-  #@recipients = User.all-[current_user]
+  
+  def new
+  
   end
 
   def show  
-  #@conversation=current_user.mailbox.conversations.find(params[:id])
   @receipts = conversation.receipts_for(current_user)
-    # mark conversation as read
-    conversation.mark_as_read(current_user)
-  
+  # mark conversation as read
+  conversation.mark_as_read(current_user)
   
   end
    def reply
@@ -43,13 +33,8 @@ class ConversationsController < ApplicationController
     redirect_to mailbox_inbox_path
   end
 
-  
-  
+
   def create
-  #recipient = User.find(params[:user_id])
-  #receipt = current_user.send_message(recipient, params[:body], params[:subject])
-  #redirect_to conversation_path.(receipt.conversation)
-  
   recipients = User.where(id: conversation_params[:recipients])
     conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
     flash[:notice] = "Your message was successfully sent!"
