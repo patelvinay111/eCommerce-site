@@ -38,8 +38,9 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  Paperclip.options[:command_path] = 'C:/Progra~1/ImageM~1.3-Q'
-  Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin'
+  #Paperclip.options[:command_path] = 'C:/Progra~1/ImageM~1.3-Q'
+  #Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin'
+  Paperclip.options[:command_path] = "/usr/local/bin/"
   Rails.application.routes.default_url_options[:host] = 'localhost:3000.com'
 
 end
