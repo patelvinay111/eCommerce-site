@@ -1,3 +1,23 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span> <span class="icon-bar"></span>
+        <span class="icon-bar"></span></button> <%= link_to 'ShopSJSU', root_path , :class=>'navbar-brand', :id=>'linkcolor'%>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <div class="navbar-form navbar-right">
+        <div class="text-of-email">
+          <%= link_to current_user.email, users_dashboard_path, :class=>'link-hover-color' %>
+        </div>
+        <div class="text-of-email">
+          <%= link_to "Log out", destroy_user_session_path, :class=>'link-hover-color', method: :delete %>
+        </div><%#= link_to "Inbox", mailbox_inbox_path %><%#= link_to "add new pic" , new_profilepic_path(current_user), :class=>'link-hover-color' ,:style => "color: #FFFFFF;"  %>
+      </div>
+    </div>
+  </div>
+</nav>
 
 <div class="container"  >
  <% @items.each do |item| %>
@@ -19,7 +39,7 @@
                         </div>
                         <div class="col-xs-12 col-md-6">
 						<% if current_user.present? %>
-                           
+
                         <%= link_to 'Buy Now', itempage_path(item, :id=>item.id), :class=>'btn btn-success', :style=>'color:#FFFFFF; text-decoration:none;' %>
 						<% else %>
 						

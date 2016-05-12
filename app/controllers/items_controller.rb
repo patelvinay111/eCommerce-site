@@ -10,8 +10,10 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+
 	@user = current_user
+  @items = Item.all
+  @items = @items.where("user_id = ?", @user.id)
   end
 
   # GET /items/1
@@ -32,7 +34,7 @@ class ItemsController < ApplicationController
   def edit
     
   end
-  
+
   # POST /items
   # POST /items.json
   def create
