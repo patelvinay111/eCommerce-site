@@ -1,0 +1,55 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span> <span class="icon-bar"></span>
+        <span class="icon-bar"></span></button> <%= link_to 'ShopSJSU', root_path , :class=>'navbar-brand', :id=>'linkcolor'%>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <div class="navbar-form navbar-right">
+        <div class="text-of-email">
+          <%= link_to current_user.email, users_dashboard_path, :class=>'link-hover-color' %>
+        </div>
+        <div class="text-of-email">
+          <%= link_to "Log out", destroy_user_session_path, :class=>'link-hover-color', method: :delete %>
+        </div><%#= link_to "Inbox", mailbox_inbox_path %><%#= link_to "add new pic" , new_profilepic_path(current_user), :class=>'link-hover-color' ,:style => "color: #FFFFFF;"  %>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container"  >
+  <% @items.each do |item| %>
+
+      <div id="products" class="row list-group" style="display: inline-block; width:50%; padding:20px;">
+        <div class="item  col-xs-4 col-lg-4"style=width:100%;">
+          <div class="thumbnail">
+
+            <%= image_tag item.image.url , :class=>"group list-group-image", :alt=>"" , :style=>"width:200px; height:200px;padding:8px;" %>
+            <div class="caption">
+              <h4 class="group inner list-group-item-heading">
+                <%= item.name %></h4>
+              <p class="group inner list-group-item-text">
+                <%= item.description %></p>
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <p class="lead">
+                    <%= item.price %></p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <% if current_user.present? %>
+
+                      <%= link_to 'Buy Now', itempage_path(item, :id=>item.id), :class=>'btn btn-success', :style=>'color:#FFFFFF; text-decoration:none;' %>
+                  <% else %>
+
+                  <%end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+  <% end %>
+</div>

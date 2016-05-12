@@ -1,8 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
-  
-  
+
   #rescue ActiveRecord::RecordNotFound
     # special handling here
  
@@ -11,9 +10,14 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
 
+    @items = Item.all
 	@user = current_user
-  @items = Item.all
-  @items = @items.where("user_id = ?", @user.id)
+  end
+
+  def current
+    @items = Item.all
+    @user = current_user
+    @items = @items.where("user_id = ?", @user.id)
   end
 
   # GET /items/1
